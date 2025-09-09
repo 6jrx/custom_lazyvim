@@ -48,4 +48,22 @@ return {
       })
     end,
   },
+
+  -- C/C++ 文件的缩进和格式设置
+  {
+    "LazyVim/LazyVim",
+    opts = function()
+      -- 设置 C/C++ 文件的自动命令
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "c", "cpp", "h", "hpp" },
+        callback = function()
+          -- 禁用多行注释的自动缩进
+          -- c0: 注释内容不额外缩进
+          -- C0: 注释结束符 */ 不额外缩进  
+          -- :0: case 标签不缩进
+          vim.opt_local.cinoptions = "c0,C0,:0"
+        end,
+      })
+    end,
+  },
 }
