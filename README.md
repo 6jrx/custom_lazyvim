@@ -1,4 +1,7 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+
+* 添加C开发环境LSP支持
+* 添加Make开发环境支持
+
+
