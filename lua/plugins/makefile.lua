@@ -5,12 +5,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-        "make",     -- Makefile 语法高亮
-        "bash",     -- Shell 脚本支持（Makefile 中常用）
+        "make", -- Makefile 语法高亮
+        "bash", -- Shell 脚本支持（Makefile 中常用）
       })
     end,
   },
-  
+
   -- 为 Makefile 添加便捷快捷键
   {
     "folke/which-key.nvim",
@@ -26,7 +26,7 @@ return {
       },
     },
   },
-  
+
   -- 添加 vim-dispatch 支持异步运行 make 命令
   {
     "tpope/vim-dispatch",
@@ -37,7 +37,7 @@ return {
       { "<leader>mD", "<cmd>Dispatch<cr>", desc = "Dispatch command" },
     },
   },
-  
+
   -- 添加 overseer.nvim 任务运行器（可选，功能更强大）
   {
     "stevearc/overseer.nvim",
@@ -64,7 +64,7 @@ return {
     },
     config = function(_, opts)
       require("overseer").setup(opts)
-      
+
       -- 自动检测 Makefile 任务
       vim.api.nvim_create_user_command("OverseerLoadTask", function()
         require("overseer").load_task_bundle("make")

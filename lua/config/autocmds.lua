@@ -9,11 +9,17 @@
 
 -- Makefile 必须使用真正的 tab，不能用空格
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "make" },
-    callback = function()
-        vim.opt_local.expandtab = false  -- 使用真正的 tab
-        vim.opt_local.tabstop = 8        -- Makefile 标准是 8
-        vim.opt_local.shiftwidth = 8
-        vim.opt_local.softtabstop = 8
-    end,
+  pattern = { "make" },
+  callback = function()
+    vim.opt_local.expandtab = false -- 使用真正的 tab
+    vim.opt_local.tabstop = 8 -- Makefile 标准是 8
+    vim.opt_local.shiftwidth = 8
+    vim.opt_local.softtabstop = 8
+  end,
+})
+vim.api.nvim_create_autocmd("FIleType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.spell = false -- 禁用Markdown的拼写检查
+  end,
 })
