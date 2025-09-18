@@ -38,7 +38,7 @@ return {
 
   -- Mason 确保安装额外的工具
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "clangd", -- C/C++ LSP 服务器
